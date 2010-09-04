@@ -1,0 +1,12 @@
+opensimBots : various opensimulator commandline robots using libsecondlife library.
+
+* heightmapExporter :
+  simple robot that enters given regions and exports seen land heightmaps as jpeg files.
+
+* primExporter :
+  another simple robot ; enters a region at given coordinates, exporting "seen" primitives shapes to an xml file.
+
+* primImporter :
+  simple robot using xml file exported by primExporter to (re)build primitives on given region.
+
+
