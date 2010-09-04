@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+    <project name="primImport" default="build" basedir=".">
+        <description>primitives importer.</description>
+        <property name="debug" value="true" overwrite="false" />
+        <target name="clean" description="remove all generated files">
+            <delete file="Import.exe" failonerror="false" />
+	    <delete file="Import.exe.mdb" failonerror="false" />
+        </target>
+        <target name="build" description="compiles the source code">
+            <csc target="exe" output="Import.exe" debug="${debug}">
+	        <references>
+		    <include name="libsecondlife.dll" />
+		    <include name="System.Data.dll" />
+		    <include name="System.Drawing.dll" />
+		    <include name="System.Windows.Forms.dll" />
+		</references>
+                <sources>
+		    <include name="primimport.cs" />
+                </sources>
+            </csc>
+        </target>
+    </project>

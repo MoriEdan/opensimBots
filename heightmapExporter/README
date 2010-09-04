@@ -1,0 +1,30 @@
+A simple mono commandline landmapper bot.
+
+Given firstname,lastname,password,grid and regionName, this bot
+will login, retrieve terrain map and save it as a png file.
+(picture output path is hardcoded in frmHeightmap.cs : /tmp/ )
+
+NOTE : the GDI stuff crashes from to time, when using mono 1.2.6 on
+a debian box.
+Using mono 1.9.x fixes this.
+
+
+== HOWTO ==
+
+* build with:
+    nant
+
+* edit Heightmap.cs to set your bot credentials:
+    set firstname, lastname, password (lines 16 to 18)
+
+* edit Heightmap.cs to set the grid login URI to use:
+    set loginuri (line 19)
+
+* edit regions.ini to set list of regions to scan.
+one region per line ; format:
+
+<region_name>,region_x,region_y
+      
+* run with:
+    mono heightmapBot.exe
+

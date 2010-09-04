@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+    <project name="primExport" default="build" basedir=".">
+        <description>primitives exporter.</description>
+        <property name="debug" value="true" overwrite="false" />
+        <target name="clean" description="remove all generated files">
+            <delete file="Export.exe" failonerror="false" />
+	    <delete file="Export.exe.mdb" failonerror="false" />
+        </target>
+        <target name="build" description="compiles the source code">
+            <csc target="exe" output="Export.exe" debug="${debug}">
+	        <references>
+		    <include name="libsecondlife.dll" />
+		    <include name="System.Data.dll" />
+		    <include name="System.Drawing.dll" />
+		    <include name="System.Windows.Forms.dll" />
+		</references>
+                <sources>
+		    <include name="primExport.cs" />
+                </sources>
+            </csc>
+        </target>
+    </project>

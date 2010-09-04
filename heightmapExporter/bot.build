@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+    <project name="heightmapBot" default="build" basedir=".">
+        <description>Simple OpenSim bot for heightmap generation..</description>
+        <property name="debug" value="true" overwrite="false" />
+        <target name="clean" description="remove all generated files">
+            <delete file="heightmapBot.exe" failonerror="false" />
+	    <delete file="heightmapBot.exe.mdb" failonerror="false" />
+        </target>
+        <target name="build" description="compiles the source code">
+            <csc target="exe" output="heightmapBot.exe" debug="${debug}">
+	        <references>
+		    <include name="libsecondlife.dll" />
+		    <include name="System.Data.dll" />
+		    <include name="System.Drawing.dll" />
+		</references>
+                <sources>
+                    <include name="frmHeightmap.cs" />
+		    <include name="Heightmap.cs" />
+                </sources>
+            </csc>
+        </target>
+    </project>
